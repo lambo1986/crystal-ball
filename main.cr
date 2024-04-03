@@ -39,12 +39,10 @@ def main
            (     >Y<    )
             \\    -^-   /
              | '.___.' |
-         ____|  |___|  |____
-        /     \\______/      \\
+         ____|  |___|  |___
+        /     \\______/     \\
        /  / \\          / \\  \\
       /  /   \\        /   \\  \\
-          / \\          / \\
-         /   \\        /   \\
 ".colorize(:red)
     Process.run("say", args: [selected_template])
     puts "Would you like another fortune? (Y/N)".colorize(:yellow)
