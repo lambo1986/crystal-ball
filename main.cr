@@ -29,7 +29,7 @@ def main
     when "Y"
       next 
     when "N"
-      puts "Thank you for visiting the Crystal Ball Fortune Teller. Farewell!".colorize(:green)
+      puts "Thank you for visiting the Crystal Ball Fortune Teller. Farewell, #{name}!".colorize(:green)
       break 
     else
       puts "Invalid response. Exiting...".colorize(:red)

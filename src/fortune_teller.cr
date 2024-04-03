@@ -13,3 +13,6 @@ class FortuneTeller
     @@fortunes.not_nil!
   end
 end
+
+# used @@ class variables because I didn't want the program to read the fortune file each instantiation 
+# instead, the same fortunes should be available globally to every instance of fortune teller 
