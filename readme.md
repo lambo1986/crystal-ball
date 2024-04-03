@@ -1,8 +1,8 @@
 # Welcome to Crystal Ball!
 ***This was a fun experiment meant to help myself learn the language Crystal, 
-but it resulted in an amazing magical fortune-telling device!***
+but it resulted in an amazing and magical fortune-telling device!***
 # Prerequisites
-- Before you begin, ensure you have Crystal installed on your system. You can find installation instructions on the official Crystal website.
+- Before you begin, ensure you have Crystal installed on your system. You can find installation instructions on the official [Crystal website](https://crystal-lang.org/).
 # First: Clone the Repo
 - Fork and Clone this repo to your computer.
 # Then: Compile the Program
