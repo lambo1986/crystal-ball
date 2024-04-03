@@ -27,15 +27,15 @@ def main
       "A vision appears, #{name}: #{fortune}",
       "For you, #{name}, the crystal ball reveals: #{fortune}",
       "Oh, curious one named #{name}, the universe declares: #{fortune}",
-      "Listen!",
-      "I will now speak.",
-      "So,",
-      "OK.",
-      "You ask, I show you:",
-      "Here:",
-      "My advice is this:",
-      "#{name},",
-      "I think that"
+      "Listen! #{fortune}",
+      "I will now speak. #{fortune}",
+      "So, #{fortune}",
+      "OK. #{fortune}",
+      "You ask, I show you: #{fortune}",
+      "Here: #{fortune}",
+      "My advice is this: #{fortune}",
+      "#{name}, #{fortune}",
+      "I tell you #{fortune}"
     ]
 
     selected_template = response_templates.sample
