@@ -26,7 +26,16 @@ def main
       "#{name}, in the tea leaves, I see... #{fortune}",
       "A vision appears, #{name}: #{fortune}",
       "For you, #{name}, the crystal ball reveals: #{fortune}",
-      "Oh, curious one named #{name}, the universe declares: #{fortune}"
+      "Oh, curious one named #{name}, the universe declares: #{fortune}",
+      "Listen!",
+      "I will now speak.",
+      "So,",
+      "OK.",
+      "You ask, I show you:",
+      "Here:",
+      "My advice is this:",
+      "#{name},",
+      "I think that"
     ]
 
     selected_template = response_templates.sample
