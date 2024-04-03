@@ -1,0 +1,24 @@
+# Compiled object files
+*.o
+*.gcda
+*.gcno
+*.gcov
+
+# Precompiled libraries
+*.a
+*.d
+
+# Compiled executables
+*.exe
+
+# Output directory
+/bin/
+
+# Dependency directories
+/lib/
+/.shards/
+/shards.lock
+
+# Editor/IDE folders
+.vscode/
+.idea/
