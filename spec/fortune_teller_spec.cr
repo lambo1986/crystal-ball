@@ -2,6 +2,13 @@ require "./spec_helper"
 require "../src/fortune_teller"
 
 describe FortuneTeller do
+  it "exists" do 
+    fortunes_path = "spec/fixtures/test_fortunes.txt"
+    fortune_teller = FortuneTeller.new(fortunes_path)
+
+    fortune_teller.should be_a FortuneTeller
+  end
+
   it "loads fortunes from a file" do
     fortunes_path = "spec/fixtures/test_fortunes.txt"
     fortune_teller = FortuneTeller.new(fortunes_path)
