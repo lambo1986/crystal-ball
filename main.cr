@@ -13,6 +13,7 @@ def main
    \\       /
     `.___.'
   Welcome to the Crystal Ball Fortune Teller".colorize(:green)
+  Process.run("say", args: ["Step inside, please! Welcome to the Crystal Ball fortune teller!"])
   puts "Enter your name: "
   name = gets.to_s.strip
 
@@ -39,6 +40,7 @@ def main
       next 
     when "N"
       puts "Thank you for visiting the Crystal Ball Fortune Teller. Farewell, #{name}!".colorize(:green)
+      Process.run("say", args: ["Good fortune for you and goodbye!"])
       break 
     else
       puts "Invalid response. Exiting...".colorize(:red)
