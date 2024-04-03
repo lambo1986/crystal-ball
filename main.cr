@@ -4,7 +4,15 @@ require "./src/fortune_teller"
 
 def main
   system("clear") || system("cls")
-  puts "Welcome to the Crystal Ball Fortune Teller".colorize(:green)
+  puts "
+      ___
+    .'   `.
+   /       \\
+  :         :
+  :         :
+   \\       /
+    `.___.'
+  Welcome to the Crystal Ball Fortune Teller".colorize(:green)
   puts "Enter your name: "
   name = gets.to_s.strip
 
