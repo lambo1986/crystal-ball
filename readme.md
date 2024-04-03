@@ -12,16 +12,16 @@ but it resulted in an amazing and magical fortune-telling device!***
 crystal build main.cr -o fortune_teller
 ```
 
--This command compiles main.cr into an executable named fortune_teller. The -o option specifies the output filename for the compiled executable.
+- This command compiles main.cr into an executable named fortune_teller. The -o option specifies the output filename for the compiled executable.
 
 # And Then: Run the FortuneTeller
-- After compiling, you can run the executable to see a random fortune:
+- After compiling, you can run the executable to see your incredible fortune:
 
 ```
 ./fortune_teller
 ```
 
--This command executes the fortune_teller binary, which prints a random fortune to your terminal.
+- This command executes the fortune_teller binary, which prints a random fortune to your terminal.
 
 ***Have Fun,<br>
 Nathan Kirk Lambertson***
