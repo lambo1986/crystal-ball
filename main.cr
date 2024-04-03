@@ -30,6 +30,7 @@ def main
 
     selected_template = response_templates.sample
     puts selected_template.colorize(:light_blue)
+    Process.run("say", args: [selected_template])
     puts "Would you like another fortune? (Y/N)".colorize(:yellow)
     response = gets.to_s.strip.upcase
     
