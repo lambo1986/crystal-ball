@@ -79,7 +79,7 @@ mouth_closed = "
    /     | |     \\
   /      | |      \\
   ".colorize(:red)
-  puts "Do you wish to enter the Magic Tower of Ancient Wisdom?".colorize(:red)
+  puts "Do you wish to enter the Magic Tower of Ancient Wisdom? (Y/N)".colorize(:red)
   Process.run("say", args: ["Do you wish to enter the Magic Tower of Ancient Wisdom?"])
   response = gets.to_s.strip.upcase
     
@@ -229,7 +229,7 @@ mouth_closed = "
       next 
     when "N"
       stop_music
-      play_music("./resources/music/3a.mp3")
+      play_music("./resources/music/6a.mp3")
       spawn do
         animate_speech(speech_duration, mouth_open, mouth_closed)
       end
@@ -240,7 +240,7 @@ mouth_closed = "
       exit 
     else
       stop_music
-      play_music("./resources/music/5a.mp3")
+      play_music("./resources/music/3a.mp3")
       puts "
             ___
            /   \\
@@ -261,8 +261,8 @@ mouth_closed = "
       /     | |     \\
      /      | |      \\
       ".colorize(:red)
-      puts "Invalid response. Exiting the Magic Tower of Ancient Wisdom...".colorize(:red)
-      Process.run("say", args: ["Good-Bye, Nice Try!"])
+      puts "Invalid response. Exiting the Magic Tower of Ancient Wisdom... Good Luck on your Journey".colorize(:red)
+      Process.run("say", args: ["Good Luck and Good-Bye!"])
       exit 
     end
   end
