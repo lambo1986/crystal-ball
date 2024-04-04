@@ -87,7 +87,8 @@ mouth_closed = "
     ]
 
     selected_template = response_templates.sample
-    speech_duration = 7 # adjust for animation duration
+    speech_duration = 7.7 # adjust for animation duration
+    puts selected_template.colorize(:light_blue)# just in case the fortune is short and the animation overrides the printing below
 
     spawn do # kinda like threads in ruby? can run side by side another operation
       animate_speech(speech_duration, mouth_open, mouth_closed)
