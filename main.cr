@@ -13,7 +13,23 @@ def animate_speech(duration, mouth_open, mouth_closed)
   end
 end
 
-def main
+def play_music(file_path : String) : Int64
+  process = Process.new("afplay", [file_path])
+  spawn do
+    process.wait
+  end
+  process.pid
+end
+
+def stop_music
+  Process.run("pkill", args: ["afplay"])
+end
+
+pid = play_music("./resources/music/7a.mp3")
+
+def intro
+  system("clear") || system("cls")
+  stop_music
   mouth_open = "
                __||__
               /      \\
@@ -42,9 +58,108 @@ mouth_closed = "
       /  /   \\        /   \\  \\
 ".colorize(:red)
 
+  play_music("./resources/music/5a.mp3")
+  puts "
+         ___
+        /   \\
+       |     |
+       | (*) |
+       \\ ^^^/
+        |||||
+        |||||
+       / | | \\
+      /  | |  \\
+     |   | |   |
+     |   | |   |
+     /___|_|___\\
+    |    | |    |
+    |    | |    |
+    |____|_|____|
+    |    | |    |
+   /     | |     \\
+  /      | |      \\
+  ".colorize(:red)
+  puts "Do you wish to enter the Magic Tower of Ancient Wisdom?".colorize(:red)
+  Process.run("say", args: ["Do you wish to enter the Magic Tower of Ancient Wisdom?"])
+  response = gets.to_s.strip.upcase
+    
+    case response
+    when "Y"
+      system("clear") || system("cls")
+      return main
+    when "N"
+      stop_music
+      system("clear") || system("cls")
+      
+      spawn do
+        animate_speech(8, mouth_open, mouth_closed)
+      end
+      
+      sleep 0.3
+      Process.run("say", args: ["Fine then, forget you ever found this place and do not return until you are ready to face the future!"])
+      puts "Fine then, forget you ever found this place and do not return until you are ready to face the future!".colorize(:green)
+      exit 
+    else
+      system("clear") || system("cls")
+      stop_music
+      puts "
+            ___
+           /   \\
+          |     |
+          | (*) |
+           \\ ^^^/
+           |||||
+           |||||
+          / | | \\
+         /  | |  \\
+        |   | |   |
+        |   | |   |
+        /___|_|___\\
+       |    | |    |
+       |    | |    |
+       |____|_|____|
+       |    | |    |
+      /     | |     \\
+     /      | |      \\
+      ".colorize(:red)
+      puts "Invalid response. Exiting the Magic Tower of Ancient Wisdom...".colorize(:red)
+      Process.run("say", args: ["Good-Bye, Nice Try!"])
+      exit
+    end
+  end
 
+  def main
+    stop_music
+    mouth_open = "
+                 __||__
+                /      \\
+               /        \\
+              /   -   -  \\
+             (     >Y<    )
+              \\    <O>   /
+               | '.___.' |
+           ____|  |___|  |___
+          /     \\______/     \\
+         /  / \\          / \\  \\
+        /  /   \\        /   \\  \\
+  ".colorize(:red)
+  
+  mouth_closed = "
+                 __||__
+                /      \\
+               /        \\
+              /   o   o  \\
+             (     >Y<    )
+              \\    -^-   /
+               | '.___.' |
+           ____|  |___|  |___
+          /     \\______/     \\
+         /  / \\          / \\  \\
+        /  /   \\        /   \\  \\
+  ".colorize(:red)
 
   system("clear") || system("cls")
+  play_music("./resources/music/7a.mp3")
   puts "
       ___
     .'   `.
@@ -54,9 +169,13 @@ mouth_closed = "
    \\       /
     `.___.'
   Welcome to the Crystal Ball Fortune Teller".colorize(:green)
-  Process.run("say", args: ["Step inside, please! Welcome to the Crystal Ball fortune teller!"])
+  Process.run("say", args: ["Step inside, please! Welcome to the Crystal Ball fortune teller! Please enter your name!"])
   puts "Enter your name: "
   name = gets.to_s.strip
+  sleep 0.1
+  stop_music
+  sleep 0.1
+  play_music("./resources/music/2a.mp3")
 
   loop do
     fortune = FortuneTeller.new("./resources/fortunes.txt").tell_fortune
@@ -95,11 +214,11 @@ mouth_closed = "
     end
 
     Process.run("say", args: [selected_template])
-    sleep 1 # this is adjusted to leave space after fortune is read so it can be printed after animation stops
+    sleep 1.5 # this is adjusted to leave space after fortune is read so it can be printed after animation stops
 
     system("clear") || system("cls")
     puts mouth_closed
-    sleep 2 # this makes sure the screen isn't cleared again after the fortune is printed
+    sleep 1.5 # this makes sure the screen isn't cleared again after the fortune is printed
     puts selected_template.colorize(:light_blue)
     puts "Would you like another fortune? (Y/N)".colorize(:yellow)
     response = gets.to_s.strip.upcase
@@ -109,6 +228,8 @@ mouth_closed = "
       system("clear") || system("cls")
       next 
     when "N"
+      stop_music
+      play_music("./resources/music/3a.mp3")
       spawn do
         animate_speech(speech_duration, mouth_open, mouth_closed)
       end
@@ -116,8 +237,10 @@ mouth_closed = "
       sleep 0.3
       Process.run("say", args: ["Good fortune for you and goodbye!"])
       puts "Thank you for visiting the Crystal Ball Fortune Teller. Farewell, #{name}!".colorize(:green)
-      break 
+      exit 
     else
+      stop_music
+      play_music("./resources/music/5a.mp3")
       puts "
             ___
            /   \\
@@ -138,12 +261,13 @@ mouth_closed = "
       /     | |     \\
      /      | |      \\
       ".colorize(:red)
-      puts "Invalid response. Exiting...".colorize(:red)
+      puts "Invalid response. Exiting the Magic Tower of Ancient Wisdom...".colorize(:red)
       Process.run("say", args: ["Good-Bye, Nice Try!"])
-      break 
+      exit 
     end
   end
 end
 
+intro
 main
 
