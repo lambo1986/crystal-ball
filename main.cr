@@ -230,6 +230,7 @@ mouth_closed = "
       next 
     when "N"
       stop_music
+      system("clear") || system("cls")
       play_music("./resources/music/6a.mp3")
       puts "
       ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⣀⣀⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -249,11 +250,29 @@ mouth_closed = "
       ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠛⠛⠛⠛⠛⠛⠛⠋⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀
       ".colorize(:magenta)
       sleep 0.3
-      Process.run("say", args: ["Good fortune for you and goodbye!"])
+      Process.run("say", args: ["Good fortune for you and goodbye! Thank you for visiting the Crystal Ball Fortune Teller. Farewell, #{name}!"])
+      system("clear") || system("cls")
+      puts "                                                        *******
+                                      ~             *---*******
+                                      ~             *----*******
+                              ~                   *-------*******
+                              __      _   _!__     *------*******
+                        _   /  \\_  _/ \\  |::| ___ **-----********   ~
+                      _/ \\_/^    \\/   ^\\/|::|\\|:|  **---*****/^\\_
+                    /\\/  ^ /  ^    / ^ __|::|_|:|_/\\_******/  ^  \\
+                  /  \\  _/ ^ ^   /    |::|--|:|---|  \\__/  ^     ^\\___
+                _/_^  \\/  ^    _/ ^   |::|::|:|-::| ^ /_  ^    ^  ^   \\_
+                /   \\^ /    /\ /       |::|--|:|:--|  /  \\        ^      \\
+              /     \\/    /  /        |::|::|:|:-:| / ^  \\  ^      ^     \\
+        _Q   / _Q  _Q_Q  / _Q    _Q   |::|::|:|:::|/    ^ \\   _Q      ^
+        /_\\)   /_\\)/_/\\\)  /_\\)  /_\\)  |::|::|:|:::|          /_\\)
+      _O|/O___O|/O_OO|/O__O|/O__O|/O__________________________O|/O__________
+      //////////////////////////////////////////////////////////////////////".colorize(:blue)
       puts "Thank you for visiting the Crystal Ball Fortune Teller. Farewell, #{name}!".colorize(:green)
       exit 
     else
       stop_music
+      system("clear") || system("cls")
       play_music("./resources/music/3a.mp3")
       puts "
             ___
