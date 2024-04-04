@@ -99,7 +99,7 @@ mouth_closed = "
 
     system("clear") || system("cls")
     puts mouth_closed
-    sleep 1 # this makes sure the screen isn't cleared again after the fortune is printed
+    sleep 2 # this makes sure the screen isn't cleared again after the fortune is printed
     puts selected_template.colorize(:light_blue)
     puts "Would you like another fortune? (Y/N)".colorize(:yellow)
     response = gets.to_s.strip.upcase
