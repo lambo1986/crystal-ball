@@ -18,7 +18,7 @@ def main
                __||__
               /      \\
              /        \\
-            /   o   o  \\
+            /   -   -  \\
            (     >Y<    )
             \\    <O>   /
              | '.___.' |
@@ -75,24 +75,30 @@ mouth_closed = "
       "Here: #{fortune}",
       "My advice is this: #{fortune}",
       "#{name}, #{fortune}",
-      "I tell you #{fortune}"
+      "I'll tell you what: #{fortune}",
+      "Listen to what I say! #{fortune}",
+      "For your information, #{fortune}",
+      "#{fortune}",
+      "#{fortune} Did you get that?",
+      "#{fortune} Does that make sense?!",
+      "#{fortune} Ok?",
+      "#{fortune} Can you believe it?",
+      "#{fortune} Who can deny it!?"
     ]
 
     selected_template = response_templates.sample
-    speech_duration = 8 # adjust for animation duration
+    speech_duration = 7 # adjust for animation duration
 
-    spawn do # kinda like threads in ruby?
+    spawn do # kinda like threads in ruby? can run side by side another operation
       animate_speech(speech_duration, mouth_open, mouth_closed)
     end
 
-    puts selected_template.colorize(:light_blue)
-    sleep 0.5
     Process.run("say", args: [selected_template])
-    puts selected_template.colorize(:light_blue)
-    sleep 1
+    sleep 1 # this is adjusted to leave space after fortune is read so it can be printed after animation stops
 
     system("clear") || system("cls")
     puts mouth_closed
+    sleep 1 # this makes sure the screen isn't cleared again after the fortune is printed
     puts selected_template.colorize(:light_blue)
     puts "Would you like another fortune? (Y/N)".colorize(:yellow)
     response = gets.to_s.strip.upcase
