@@ -23,5 +23,13 @@ crystal build main.cr -o fortune_teller
 
 - This command executes the fortune_teller binary, which prints a random fortune to your terminal.
 
+# To kill the music after the game is over:
+
+```
+pkill afplay
+```
+
+- Note: The music will also end when the song is over, or you can rerun the program and press any key besides "y" at the first prompt to kill the music.
+
 ***Have Fun,<br>
 Nathan Kirk Lambertson***
