@@ -41,9 +41,9 @@ def main
     selected_template = response_templates.sample
     puts selected_template.colorize(:light_blue)
     puts "
-                __|__
-               /     \\
-              /       \\
+               __||__
+              /      \\
+             /        \\
             /   o   o  \\
            (     >Y<    )
             \\    -^-   /
@@ -66,7 +66,28 @@ def main
       Process.run("say", args: ["Good fortune for you and goodbye!"])
       break 
     else
+      puts "
+            ___
+           /   \\
+          |     |
+          | (*) |
+          \\ ^^^/
+           |||||
+           |||||
+          / | | \\
+         /  | |  \\
+        |   | |   |
+        |   | |   |
+        /___|_|___\\
+       |    | |    |
+       |    | |    |
+       |____|_|____|
+       |    | |    |
+      /     | |     \\
+     /      | |      \\
+".colorize(:red)
       puts "Invalid response. Exiting...".colorize(:red)
+      Process.run("say", args: ["Good-Bye, Nice Try!"])
       break 
     end
   end
