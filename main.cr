@@ -250,7 +250,6 @@ mouth_closed = "
       ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠛⠛⠛⠛⠛⠛⠛⠋⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀
       ".colorize(:magenta)
       puts "See You Soon."
-      sleep 0.3
       Process.run("say", args: ["Good fortune for you and goodbye! Thank you for visiting the Crystal Ball Fortune Teller. Farewell, #{name}!"])
       sleep 0.1
       system("clear") || system("cls")
