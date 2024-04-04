@@ -249,8 +249,10 @@ mouth_closed = "
       ⠀⠀⠀⠀⠀⠙⠻⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠟⠋⠀⠀⠀⠀⠀
       ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠛⠛⠛⠛⠛⠛⠛⠋⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀
       ".colorize(:magenta)
+      puts "See You Soon."
       sleep 0.3
       Process.run("say", args: ["Good fortune for you and goodbye! Thank you for visiting the Crystal Ball Fortune Teller. Farewell, #{name}!"])
+      sleep 0.1
       system("clear") || system("cls")
       puts "                                                        *******
                                       ~             *---*******
@@ -267,7 +269,7 @@ mouth_closed = "
         _Q   / _Q  _Q_Q  / _Q    _Q   |::|::|:|:::|/    ^ \\   _Q      ^
         /_\\)   /_\\)/_/\\\)  /_\\)  /_\\)  |::|::|:|:::|          /_\\)
       _O|/O___O|/O_OO|/O__O|/O__O|/O__________________________O|/O__________
-      //////////////////////////////////////////////////////////////////////".colorize(:blue)
+      //////////////////////////////////////////////////////////////////////".colorize(:yellow)
       puts "Thank you for visiting the Crystal Ball Fortune Teller. Farewell, #{name}!".colorize(:green)
       exit 
     else
