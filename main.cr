@@ -58,7 +58,6 @@ mouth_closed = "
       /  /   \\        /   \\  \\
 ".colorize(:red)
 
-  stop_music
   play_music("./resources/music/5a.mp3")
   puts "
          ___
